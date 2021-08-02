@@ -1,3 +1,27 @@
+html {
+    background-color:rosybrown;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 20px;
+    background-color: azure;
+    box-shadow: 0 0 15px gray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:rosybrown;
+}
+
+h1 {
+    text-align: center;
+    color:rgb(97, 204, 236);
+    font-family:'Times New Roman', Times, serif;
+}
+
+h3 {
+    text-align: center;
+}
+
 .form-container{
     padding: 10px;
     width: 80%;
@@ -7,3 +31,16 @@
     box-shadow: inset 0 0 5px rgb(97, 204, 236);
     border: 1px solid rgb(255, 255, 255);
 }
+
+input, textarea, select, form p {
+    display: block;
+    margin: 10px auto;
+    width: 85%;
+    padding: 5px;
+}
+
+/* #item-container {
+} */
+
+/* #list-container {
+} */

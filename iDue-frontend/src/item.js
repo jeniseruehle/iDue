@@ -1,15 +1,24 @@
 class Item {
+    static all = []
     
-    constructor({id, name, description, duedate, list_id}) {
-        this.id = id
-        this.name = name
-        this.description = description
-        this.duedate = duedate
-        this.list_id = list_id
+    constructor(item, itemAttributes) {
+        this.id = item.id
+        this.name = itemAttributes.name
+        this.description = itemAttributes.description
+        this.duedate = itemAttributes.duedate
+        this.list_id = itemAttributes.list_id
+        
         Item.all.push(this)
     }
 
     static renderItems() {
-        
+        return `
+            <div data-id=${this.id}>
+                <h3>Name: ${this.name}</h3>
+                <p>Description: ${this.description}</p>
+                <p>Due Date: ${this.duedate}</p>
+                <p>List: ${this.list.title}</p>
+            </div>
+        `;
     }
 }

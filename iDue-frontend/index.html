@@ -10,20 +10,36 @@
     <link rel="stylesheet" href="style.css">
     
     
-    <br><title>iDue 💐</title></head></br>
-
+    <br><title>iDue 💐</title></br>
+    <script src="src/item.js"></script>
+    <script src="src/itemAdapter.js"></script>
+    <script src="src/listAdapter.js"></script>
     <script src="src/index.js"></script>
 
   </head>
 
   <body>
-   <h1 style="color:rgb(97, 204, 236);text-align: center;font-family:'Times New Roman', Times, serif">iDue 💐 Your Wedding Checklist</h1>
+   <h1>iDue 💐 Your Wedding Checklist</h1>
 
    <div class="form-container">
-       <form id="list-container">
-           <h3>Setup a new list:</h3>
+       <form id="create-item-container">
+           <h3>Add an item!</h3>
+           <input id='input-name' type="text" name="name" value="" placeholder="Item name..." class="input-text">
+           <textarea id='input-description' name="description" rows="8" cols="80" value="" placeholder="Item description..."></textarea>
+           <input id='input-duedate' name="duedate" rows="8" cols="80" value="" placeholder="Add tentative duedate...">
+
+           <p>Choose a list to add this item to:</p>
+           <select id="lists" name="lists"></select>
+           <input id="create-button" type="submit" name="submit" value="Create New Item!">
        </form>
+
+       <form id="create-sort">
+         <p>Sort Items By List:</p>
+         <select id="sorted-list" name="sorted-list"></select>
+       </form>
+
    </div>
+   <div id="create-list-container"></div>
   
 
   </body>
