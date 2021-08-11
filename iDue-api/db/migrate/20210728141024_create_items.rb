@@ -3,8 +3,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
     create_table :items do |t|
       t.string :name
       t.string :description
-      t.decimal :price
-      t.date :duedate
+      t.datetime :duedate
       t.references :list, null: false, foreign_key: true
 
 

@@ -3,7 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ListAdapter.getLists()
 
     const createItemForm = document.querySelector("#create-item-form")
+    const sorted = document.querySelector("#sorted-list")
+    const sortBtn = document.querySelector("#create-sort-btn")
+    sorted.addEventListener("change", ItemAdapter.getItems)
     createItemForm.addEventListener("submit", handleCreateForm)
+    sortBtn.addEventListener("click", ItemAdapter.filterItems)
 
 })
 

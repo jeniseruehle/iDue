@@ -41,4 +41,27 @@ class ItemAdapter {
         })
         .catch(err => console.log(err))
     }
+
+    static filterItems(e) {
+        fetch(ItemAdapter.endPoint)
+        .then(resp => resp.json())
+        .then(json => {
+            let items = json.data.sort(function(a,b) {
+                if (a.attributes.model < b.attributes.model) {
+                    return -1
+                }
+                if (a.attributes.model > b.attributes.model) {
+                    return 1
+                }
+            })
+            document.querySelector('#item-container').innerHTML = ""
+            items.forEach(item => {
+                let newItem = new Item(item, item.attributes)
+                const itemCard = document.createElement('div');
+                itemCard.innerHTML = newItem.renderItemCard()
+                document.querySelector('#item-container').prepend(itemCard)
+            })
+        })
+
+    }
 }

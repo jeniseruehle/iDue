@@ -39,8 +39,16 @@ input, textarea, select, form p {
     padding: 5px;
 }
 
-/* #item-container {
-} */
+[data-id] {
+    padding: 5px;
+    color:rgb(43, 159, 226);
+    background-color: cornsilk;
+    height: 100%;
+}
 
-/* #list-container {
-} */
+#item-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}

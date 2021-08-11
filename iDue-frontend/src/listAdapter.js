@@ -9,7 +9,6 @@ class ListAdapter {
            json.data.forEach(list => {
                const listID = list.id
                const title = list.attributes.title
-               const archive = list.attributes.archive
                const dropdown = document.querySelector("lists")
                dropdown.innerHTML += `<option value="${listID}">${title}</option>`
                sorted.innerHTML += `<option value="${listID}">${title}</option>`
