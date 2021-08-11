@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
     def index
-        items = Item.all.order_by_created_at
+        items = Item.all
         render json: ItemSerializer.new(items)
     end
 
@@ -11,11 +11,11 @@ class ItemsController < ApplicationController
         end
     end
 
-    def destroy
-        item = Item.find_by(id: params[:id])
-        item.delete
-        render json: item
-    end
+    # def destroy
+    #     item = Item.find_by(id: params[:id])
+    #     item.delete
+    #     render json: item
+    # end
 
     private
 

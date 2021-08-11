@@ -5,41 +5,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="style.css">
-    
-    
     <br><title>iDue 💐</title></br>
-    <script src="src/item.js"></script>
-    <script src="src/itemAdapter.js"></script>
-    <script src="src/listAdapter.js"></script>
-    <script src="src/index.js"></script>
+
+    <!-- scripts -->
+    <script type="text/javascript" src="src/adapter.js" charset="UTF-8"></script>
+    <script script type="text/javascript" src="src/index.js" charset="UTF-8"></script>
+    <script script type="text/javascript" src="src/item.js" charset="UTF-8"></script>
+    <script script type="text/javascript" src="src/list.js" charset="UTF-8"></script>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css">
 
   </head>
 
   <body>
-   <h1>iDue 💐 Your Wedding Checklist</h1>
+    <header>
+      <h1>iDue 💐 Your Wedding Checklist</h1>
+    </header>
+   
 
-   <div class="form-container">
-       <form id="create-item-container">
-           <h3>Add an item!</h3>
-           <input id='input-name' type="text" name="name" value="" placeholder="Item name..." class="input-text">
-           <textarea id='input-description' name="description" rows="8" cols="80" value="" placeholder="Item description..."></textarea>
-           <input id='input-duedate' name="duedate" rows="8" cols="80" value="" placeholder="Add tentative duedate...">
+   <div class="title-container">
+      <h3>Add a To-Due:</h3>
+      <div class="form-container" data-action="create">
+        <form id="create-item-form">
+          <input id='#name-data' type="text" name="name" value="" placeholder="Item name..." class="input-text">
+           <textarea id='description-data' name="description" value="" placeholder="Item description..."></textarea>
+           <input id='duedate-data' name="duedate" value="" placeholder="Add tentative duedate...">
 
-           <p>Choose a list to add this item to:</p>
+           <p>Choose a list:</p>
            <select id="lists" name="lists"></select>
-           <input id="create-button" type="submit" name="submit" value="Create New Item!">
-       </form>
+           <input id="create-button" type="submit" name="submit" value="Create New To-Due!" class="submit">
+        </form>
 
-       <form id="create-sort">
-         <p>Sort Items By List:</p>
-         <select id="sorted-list" name="sorted-list"></select>
-       </form>
+        <!-- <form id="create-sort">
+          <p>Sort To-Dues By List:</p>
+          <select id="sorted-list" name="sorted-list"></select>
+        </form> -->
+      </div>
+           
 
    </div>
-   <div id="create-list-container"></div>
+   <div id="item-container"></div>
   
 
   </body>

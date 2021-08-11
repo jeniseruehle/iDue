@@ -1,22 +1,26 @@
-// class List {
+class List {
     
-//     static all = []
-    
-//     constructor(list, listAttributes) {
-//         this.id = list.id
-//         this.title = listAttributes.title
-//         this.archive = listAttributes.archive
-//         this.items = list.items
+    constructor(list) {
+        this.id = list.id
+        this.title = list.attributes.title
+        this.items = list.attributes.items
         
-//         List.all.push(this)
-//     }
+        List.all.push(this)
+    }
 
-//     static renderLists() {
-//         return `
-//             <div data-id=${this.id}>
-//                 <h3>Title: ${this.title}</h3>
-//                 <p>Items: ${this.items}</p>
-//             </div>
-//         `;
-//     }
-// }
+    static renderLists() {
+        apiAdapter.getLists()
+        .then(lists => {
+            lists.data.forEach(list => {
+                let dropDown = document.querySelector('select')
+                let options = document.createElement('option')
+                options.setAttribute("value", list.id)
+                options.innerHTML = list.attributes.title
+                dropDown.append(options)
+            })
+        })
+        .catch(error => console.log(error))
+    }
+}
+
+List.all = []

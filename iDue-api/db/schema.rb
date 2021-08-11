@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_07_28_141024) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.datetime "duedate"
+    t.date "duedate"
     t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
