@@ -32,4 +32,10 @@ class ApiAdapter {
        return fetch(`${this.listsURL}`)
         .then(resp => resp.json())
     }
+
+    fetchDelete(e) {
+        fetch(`${this.itemsURL}/${e.target.dataset.id}`, {
+            method: "DELETE"
+        })
+    }
 }

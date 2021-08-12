@@ -11,11 +11,11 @@ class ItemsController < ApplicationController
         end
     end
 
-    # def destroy
-    #     item = Item.find_by(id: params[:id])
-    #     item.delete
-    #     render json: item
-    # end
+    def destroy
+        item = Item.find(params[:id])
+        item.delete
+        render json: item
+    end
 
     private
 

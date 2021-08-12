@@ -7,7 +7,6 @@ class Item {
         this.duedate = itemAttributes.duedate
         this.list = itemAttributes.list
         this.list_id = itemAttributes.list_id
-        
         Item.all.push(this)
     }
 
@@ -22,12 +21,21 @@ class Item {
     }
 
     renderItemCard() {
+        // let btn = document.createElement("button")
+        // btn.innerText = "Delete Item"
+        // btn.setAttribute("data-item-id", this.id)
+        // btn.addEventListener("click", e => this.deleteItem(e))
+        
         return `
             <div data-id=${this.id}><center>
                 <h3>${this.list.title}</h3>
                 <p><b>Name:</b> ${this.name}</p>
                 <p><b>Description:</b> ${this.description}</p>
                 <p><b>Due Date:</b> ${this.duedate}</p>
+                
+                <div class="btn">
+                    <button data-id=${this.id} type="button" class="delete">Delete</button>
+                </div>
                 </center>
             </div>
         `;
@@ -45,6 +53,18 @@ class Item {
             e.target.reset()
         })
     }
+
+    static deleteItem() {
+        const itemContainer = document.querySelector('#item-container')
+        itemContainer.addEventListener('click', e => {
+            if (e.target.className === "delete") {
+                apiAdapter.fetchDelete(e)
+                this.data-id.remove()
+            }
+        })
+    }
+
+
 }
 
 Item.all = []

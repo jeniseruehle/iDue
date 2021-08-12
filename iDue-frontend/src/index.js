@@ -3,6 +3,7 @@ const apiAdapter = new ApiAdapter()
 document.addEventListener('DOMContentLoaded', () => {
     Item.renderItems()
     Item.createItemForm()
+    Item.deleteItem()
     List.renderLists()
 
 })
