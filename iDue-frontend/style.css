@@ -1,5 +1,6 @@
 html {
     background-color:rosybrown;
+    background-image: url("https://laurenconrad.com/wp-content/uploads/2016/02/hearts-desktop.jpg");
 }
 
 body {
@@ -14,7 +15,7 @@ body {
 
 h1 {
     text-align: center;
-    color:rgb(97, 204, 236);
+    color:rgb(148, 220, 241);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -42,14 +43,23 @@ input, textarea, select, form p {
 
 [data-id] {
     padding: 5px;
-    color:rgb(43, 159, 226);
-    background-color: cornsilk;
+    color:rgb(192, 135, 135);
+    background-color:rgb(255, 255, 255);
     height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rosybrown;
+    border: 1px solid rgb(255, 255, 255);
 }
 
 #item-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 2fr;
     column-gap: 20px;
     row-gap: 20px;
+}
+
+.btn {
+    position: relative;
+    float: right;
 }

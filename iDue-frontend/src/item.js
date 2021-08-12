@@ -21,22 +21,16 @@ class Item {
     }
 
     renderItemCard() {
-        // let btn = document.createElement("button")
-        // btn.innerText = "Delete Item"
-        // btn.setAttribute("data-item-id", this.id)
-        // btn.addEventListener("click", e => this.deleteItem(e))
-        
         return `
-            <div data-id=${this.id}><center>
+            <div data-id=${this.id}>
                 <h3>${this.list.title}</h3>
                 <p><b>Name:</b> ${this.name}</p>
                 <p><b>Description:</b> ${this.description}</p>
                 <p><b>Due Date:</b> ${this.duedate}</p>
                 
                 <div class="btn">
-                    <button data-id=${this.id} type="button" class="delete">Delete</button>
+                    <center><button data-id=${this.id} type="button" class="delete">Delete</button></center>
                 </div>
-                </center>
             </div>
         `;
     }
