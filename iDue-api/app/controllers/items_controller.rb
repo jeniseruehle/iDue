@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
     def index
-        items = Item.all
+        items = Item.all.order_by_duedate
         render json: ItemSerializer.new(items)
     end
 
