@@ -39,7 +39,7 @@ class Item {
             e.preventDefault()
             const nameData = document.querySelector('#name-data').value
             const descriptionData = document.querySelector('#description-data').value
-            const duedateData = parseInt(document.querySelector('duedate-data').value('dd-M-yyyy'))
+            const duedateData = document.querySelector('#duedate-data').value
             const listID = parseInt(document.querySelector('#lists').value)
             apiAdapter.postItems(nameData, descriptionData, duedateData, listID)
             e.target.reset()
