@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     Item.createItemForm()
     Item.deleteItem()
     List.renderLists()
+    List.filterLists()
+    List.filterListener()
 
 })
 
