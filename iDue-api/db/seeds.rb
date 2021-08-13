@@ -14,6 +14,8 @@ venue = List.create(title: "Venue")
 flowers = List.create(title: "Flowers")
 music = List.create(title: "Music")
 food = List.create(title: "Food")
+decor = List.create(title: "Decor")
+other = List.create(title: "Other")
 
 the_dress = Item.create(name: "Maggie Sottero", description: "Dublin mermaid gown, Ivory over Nude.", duedate: "08/04/2021", list_id: dress.id)
 garden = Item.create(name: "Botanical Gardens", description: "Norfolk Botanical Gardens, Rose Garden package.", duedate: "10/11/2021", list_id: venue.id)
