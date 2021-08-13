@@ -24,19 +24,18 @@
         <form id="create-item-form">
           <input id='name-data' type="text" name="name" value="" placeholder="Item name..." class="input-text">
            <textarea id='description-data' name="description" value="" placeholder="Item description..."></textarea>
-           <input id='duedate-data' name="duedate" value="" placeholder="Add tentative duedate...">
+           <input id='duedate-data' name="duedate" value="" placeholder="Add tentative duedate..."><br>
 
-           <p>Choose a list:</p>
-           <select id="lists" name="lists"></select>
+           <!-- <p>Choose a list:</p> -->
+           <select id="lists" name="lists">
+             <option value="0">Choose a List</option>
+           </select>
            <input id="create-button" type="submit" name="submit" value="Create New To-Due!" class="submit">
         </form>  
       </div>
 
   <div class="search-input">
-    <!-- <form id="create-filter-form"> -->
       <p>Filter By List:</p>
-      <!-- <select id="filtered-list" name="filtered-list"></select> -->
-    <!-- </form> -->
   </div>
            
 

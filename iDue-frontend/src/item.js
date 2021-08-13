@@ -29,7 +29,7 @@ class Item {
                 <p><b>Due Date:</b> ${this.duedate}</p>
                 
                 <div class="btn">
-                    <center><button data-id=${this.id} type="button" class="delete">Delete</button></center>
+                    <button data-id=${this.id} type="button" class="remove">Delete</button>
                 </div>
             </div>
         `;
@@ -50,10 +50,13 @@ class Item {
 
     static deleteItem() {
         const itemContainer = document.querySelector('#item-container')
+        // const dataId = document.querySelector('div')
         itemContainer.addEventListener('click', e => {
-            if (e.target.className === "delete") {
+            e.preventDefault()
+            if (e.target.className === "remove") {
                 apiAdapter.fetchDelete(e)
-                this.data-id.remove()
+                this.attributes("id").remove()
+                // e.target.remove(dataId)
             }
         })
     }

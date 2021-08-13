@@ -21,8 +21,6 @@ class ApiAdapter {
         .then(item => {
             const itemData = item.data
             const newItem = new Item(itemData, itemData.attributes)
-            // const itemCard = document.createElement('div');
-            // itemCard.innerHTML = newItem.renderItemCard()
             document.querySelector('#item-container').innerHTML += newItem.renderItemCard()
         })
         .catch(err => console.log(err))
