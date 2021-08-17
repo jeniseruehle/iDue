@@ -55,7 +55,7 @@ class Item {
             e.preventDefault()
             if (e.target.className === "remove") {
                 apiAdapter.fetchDelete(e)
-                this.attributes("id").remove()
+                // this.attributes("id").remove()
                 // e.target.remove(dataId)
             }
         })
