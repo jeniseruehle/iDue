@@ -59,7 +59,6 @@ input, textarea, select, form p {
     row-gap: 20px;
 }
 
-.btn {
-    position: relative;
-    float: right;
+.remove {
+    height: auto;
 }

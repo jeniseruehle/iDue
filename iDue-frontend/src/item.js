@@ -15,7 +15,7 @@ class Item {
         .then(items => {
             items.data.forEach(item => {
                 let newItem = new Item(item, item.attributes)
-                document.querySelector('#item-container').innerHTML += newItem.renderItemCard()
+                document.querySelector('#item-container').insertAdjacentHTML("beforeend", newItem.renderItemCard())
             })
         })
     }
@@ -27,10 +27,7 @@ class Item {
                 <p><b>Name:</b> ${this.name}</p>
                 <p><b>Description:</b> ${this.description}</p>
                 <p><b>Due Date:</b> ${this.duedate}</p>
-                
-                <div class="btn">
-                    <button data-id=${this.id} type="button" class="remove">Delete</button>
-                </div>
+                <button data-id=${this.id} type="button" class="remove">Delete</button>
             </div>
         `;
     }
@@ -49,14 +46,11 @@ class Item {
     }
 
     static deleteItem() {
-        const itemContainer = document.querySelector('#item-container')
-        // const dataId = document.querySelector('div')
+        let itemContainer = document.querySelector('#item-container')
         itemContainer.addEventListener('click', e => {
-            e.preventDefault()
+            console.log(e.target)
             if (e.target.className === "remove") {
                 apiAdapter.fetchDelete(e)
-                // this.attributes("id").remove()
-                // e.target.remove(dataId)
             }
         })
     }

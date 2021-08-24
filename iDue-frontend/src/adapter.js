@@ -21,7 +21,7 @@ class ApiAdapter {
         .then(item => {
             const itemData = item.data
             const newItem = new Item(itemData, itemData.attributes)
-            document.querySelector('#item-container').innerHTML += newItem.renderItemCard()
+            document.querySelector('#item-container').insertAdjacentHTML("beforeend", newItem.renderItemCard())
         })
         .catch(err => console.log(err))
     }
@@ -34,6 +34,9 @@ class ApiAdapter {
     fetchDelete(e) {
         fetch(`${this.itemsURL}/${e.target.dataset.id}`, {
             method: "DELETE"
+        })
+        .then(resp => {
+            e.target.parentElement.remove()
         })
     }
 }
